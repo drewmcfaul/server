@@ -12,6 +12,7 @@ jobs:
       - run: cp scripts/settings/default/* scripts/settings/
       - run: mkdir build
       - run: cd build
+      - run: ls ..
       - run: cmake ../
       - run: make -j $(nproc)
 
