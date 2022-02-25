@@ -79,8 +79,19 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 link_libraries(${CMAKE_THREAD_LIBS_INIT})
 
-# Find MySQL
-find_package(MySQL REQUIRED)
+message(STATUS "BUILDING MARIADB FROM SOURCE!")
+CPMAddPackage(
+    NAME mariadb
+    GITHUB_REPOSITORY mariadb-corporation/mariadb-connector-c
+    GIT_TAG 907ed6878648d5470f2a95820628e81f6ef78e13
+    OPTIONS
+        "INSTALL_PLUGINDIR ${CMAKE_BINARY_DIR}"
+        "WITH_CURL OFF"
+        "WITH_SSL OFF"
+        "WITH_UNIT_TESTS OFF"
+)
+include_directories(${mariadb_SOURCE_DIR}/include ${mariadb_SOURCE_DIR}/include)
+include_directories(${mariadb_SOURCE_DIR}/include ${mariadb_BINARY_DIR}/include)
 
 # Find ZMQ
 find_package(ZeroMQ REQUIRED)
