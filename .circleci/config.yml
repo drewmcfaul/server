@@ -7,9 +7,9 @@ jobs:
 
     steps:
       - checkout
-      - run: pip3 install -r server/tools/requirements.txt
-      - run: cp server/conf/default/* server/conf/
-      - run: cp server/scripts/settings/default/* server/scripts/settings/
+      - run: pip3 install -r tools/requirements.txt
+      - run: cp conf/default/* conf/
+      - run: cp scripts/settings/default/* scripts/settings/
 
 workflows:
   version: 2.1
