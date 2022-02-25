@@ -12,8 +12,8 @@ jobs:
       - run: cp scripts/settings/default/* scripts/settings/
       - run: mkdir build
       - run: cd build
-      - run: ls ..
-      - run: cmake ../
+      - run: ls ../project
+      - run: cmake ../project
       - run: make -j $(nproc)
 
 workflows:
