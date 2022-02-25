@@ -1,0 +1,18 @@
+version: 2.1
+
+jobs:
+  build-for-linux:
+    docker: 
+      - image: iorfanidi/ubuntu-20.04-gcc-cmake-git-python3-pip-conan:latest
+
+    steps:
+      - checkout
+      - run: pip3 install -r server/tools/requirements.txt
+      - run: cp server/conf/default/* server/conf/
+      - run: cp server/scripts/settings/default/* server/scripts/settings/
+
+workflows:
+  version: 2.1
+  build:
+    jobs:
+      - build-for-linux
