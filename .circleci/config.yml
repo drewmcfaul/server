@@ -14,7 +14,7 @@ jobs:
       - run: cd build
       - run: ls ../project
       - run: cmake ../project
-      - run: make -j $(nproc)
+      - run: make
 
 workflows:
   version: 2.1
