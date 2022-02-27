@@ -14,7 +14,7 @@ jobs:
       - run: cd build
       - run: ls ../project
       - run: cmake ../project
-      - run: make
+      - run: make -j 4
 
 workflows:
   version: 2.1
