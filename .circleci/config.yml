@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build-for-linux:
     docker: 
-      - image: iorfanidi/ubuntu-20.04-gcc-cmake-git-python3-pip-conan:latest
+      - image: dreladen/ffxi_server
 
     steps:
       - checkout
