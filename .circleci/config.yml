@@ -4,6 +4,9 @@ jobs:
   build-for-linux:
     docker: 
       - image: dreladen/ffxi_server
+        auth:
+          username: dreladen
+          password: bc05b596-03dd-478b-9b90-ce742706744b
 
     steps:
       - checkout
